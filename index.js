@@ -1,16 +1,23 @@
-require('dotenv').config();
-const express = require('express');
+//require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config(); // ✅
+
+import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
-const userRoutes = require('./routes/user.routes');
-const logger = require('./middlewares/logger');
+import userRoutes from  './routes/user.routes.js';
+// logger doit aussi être importé, s'il est défini dans un autre fichier
+import logger from './middlewares/logger.js'; // ou adapte le chemin
 
 
 // Middleware
+import morgan from 'morgan';
+import cors from 'cors';
 app.use(express.json());
-app.use(require('morgan')('dev'))
-app.use(require('cors')());
+app.use(morgan('dev'));
+app.use(cors());
 app.use(logger); // middleware global
+
 // Routes
 app.get('/', (req, res) => {
   res.send('Bienvenue sur mon API Express !');

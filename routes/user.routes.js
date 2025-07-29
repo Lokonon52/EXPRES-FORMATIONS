@@ -1,16 +1,10 @@
 
 // routes/user.routes.js
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Données mock (simulant une base de données)
-//const utilisateurs = require('../data/users');
-const utilisateurs = [
-  { id: 1, nom: "Alice", email: "alice@example.com", ville: "Paris" },
-  { id: 2, nom: "Bob", email: "bob@example.com", ville: "Lyon" },
-  { id: 3, nom: "Charlie", email: "charlie@example.com", ville: "Paris" },
-  { id: 4, nom: "David", email: "david@example.com", ville: "Marseille" }
-];
+import utilisateurs  from '../data/users.js' ;
 //________________________________________________________________________________________
 router.post('/', (req, res) => {
   res.send('Créer un utilisateur');
@@ -66,4 +60,4 @@ router.get('/', (req, res) => {
   res.json(resultats);
 });
 
-module.exports = router;
+export default router;

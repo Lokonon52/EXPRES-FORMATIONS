@@ -21,4 +21,4 @@ const utilisateurs = [
   { id: 19, nom: "Sophie", email: "sophie@example.com", ville: "Marseille" },
   { id: 20, nom: "Tom", email: "tom@example.com", ville: "Toulouse" }
 ];
-module.exports=utilisateurs
+export default utilisateurs;

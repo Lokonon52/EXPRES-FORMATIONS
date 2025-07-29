@@ -4,5 +4,5 @@ function logger(req, res, next) {
   next(); // passer à la prochaine étape
 }
 
-module.exports = logger;
+export default logger;
 

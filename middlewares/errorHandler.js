@@ -10,7 +10,7 @@ app.use((err, req, res, next) => {
 });
 
 // les exceptions non gérées 
-const express = require('express');
+import express from 'express';
 //const router = express.Router();
 router.get('/fail', (req, res) => {
   throw new Error('Erreur volontaire');
