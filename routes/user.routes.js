@@ -5,6 +5,12 @@ const router = express.Router();
 
 // Données mock (simulant une base de données)
 //const utilisateurs = require('../data/users');
+const utilisateurs = [
+  { id: 1, nom: "Alice", email: "alice@example.com", ville: "Paris" },
+  { id: 2, nom: "Bob", email: "bob@example.com", ville: "Lyon" },
+  { id: 3, nom: "Charlie", email: "charlie@example.com", ville: "Paris" },
+  { id: 4, nom: "David", email: "david@example.com", ville: "Marseille" }
+];
 //________________________________________________________________________________________
 router.post('/', (req, res) => {
   res.send('Créer un utilisateur');
@@ -57,7 +63,6 @@ router.get('/', (req, res) => {
       resultats = resultats.slice(0, limit);
     }
   }
-
   res.json(resultats);
 });
 
