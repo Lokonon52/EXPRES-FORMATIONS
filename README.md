@@ -58,3 +58,13 @@ await User.update({ nom: "Alice" }, { where: { id: 5 } });
 
 // Supprimer
 await User.destroy({ where: { id: 5 } });
+```
+
+###  ⇒ Ces méthodes traduisent tes intentions JS en requêtes SQL automatiques comme :
+
+````sql
+ SELECT * FROM users;
+SELECT * FROM users WHERE id = 5;
+UPDATE users SET nom = 'Alice' WHERE id = 5;
+DELETE FROM users WHERE id = 5;```
+````
