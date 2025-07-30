@@ -5,7 +5,7 @@ dotenv.config(); // ✅
 import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
-import userRoutes from  './routes/user.routes.js';
+import userRoutes from  './routes-sansDB/user.routes.js';
 // logger doit aussi être importé, s'il est défini dans un autre fichier
 import logger from './middlewares/logger.js'; // ou adapte le chemin
 
